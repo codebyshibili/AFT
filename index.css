@@ -20,12 +20,12 @@
 }
 .nav-banner-container{
     width: 100%;
-    height: 100vh;
-    background-color: rgb(64, 67, 66);
-    background-size: 100vw 100vh;
-    animation: bganimation 30s linear infinite;
+    background-color: rgb(45,42,99);
+    height: 12%;
+    display: flex;
+  
 }
-@keyframes bganimation {
+/* @keyframes bganimation {
     0%{
       background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(Access-images/banner\ bg_11zon.jpg);
     }
@@ -39,27 +39,32 @@
    100%{
     background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(Access-images/banner\ bg_11zon.jpg);
    }
-}
+} */
 
-@keyframes zoomEffect {
+/* @keyframes zoomEffect {
     0% {
-      transform: scale(1); /* Original size */
+      transform: scale(1); 
     }
     50% {
-      transform: scale(1.5); /* Zoom in */
+      transform: scale(1.5); 
     }
     100% {
-      transform: scale(1); /* Zoom out */
+      transform: scale(1); 
     }
-}
+} */
 
 /* ..............navbar.................. */
 
 .navbar-container{
     width: 100%;
-    height: 12%;
+    height: auto;
     display: flex;
     justify-content: space-between;
+    background-color: rgb(45,42,99);
+    align-items: center;
+    z-index: 99;
+    position: fixed;
+
     /* background-color: rgb(45,42,99); */
 }
 .navlogo-section{
@@ -120,7 +125,7 @@
     font-weight: bold;
     text-transform: uppercase;
     color: white;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     transition: opacity 0.8s ease-in; /* Smooth fade-out and fade-in */
   }
 
@@ -691,6 +696,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
+        z-index: 99;
       }
 
     .nav-items a {
@@ -1180,3 +1186,89 @@
     
 
     }
+
+
+    /* Slider Animation */
+@keyframes slidy {
+    0% { left: 0%; }
+    20% { left: 0%; }
+    25% { left: -100%; }
+    45% { left: -100%; }
+    50% { left: -200%; }
+    70% { left: -200%; }
+    75% { left: -300%; }
+    95% { left: -300%; }
+    100% { left: 0%; }
+  }
+  
+  body {
+    margin: 0;
+  }
+  
+  #slider {
+    overflow: hidden;
+    position: relative;
+    background: #f5f5f5;
+  }
+  
+  #slider figure {
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    text-align: left;
+    font-size: 0;
+    animation: 30s slidy infinite;
+  }
+
+  #slider figure img {
+    width: 20%;
+    float: left;
+  }
+  
+  .arrowButton {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 4em;
+    height: 4em;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .arrowButton.left {
+    left: 20px;
+  }
+  
+  .arrowButton.right {
+    right: 20px;
+  }
+  
+  .arrowButton::after {
+    content: '';
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+  }
+  
+  .arrowButton.left::after {
+    transform: rotate(-135deg);
+  }
+  
+  .arrowButton.right::after {
+    transform: rotate(45deg);
+  }
+  
+  .arrowButton:hover {
+    border-color: #ff6600;
+  }
+  
+  .arrowButton:hover::after {
+    border-color: #ff6600;
+  }
+  
